@@ -3,69 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chứng chỉ cho máy bypass</title>
+    <title>Video Full Screen tự động điều chỉnh</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #eee;
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden; /* Ngăn cuộn trang nếu video lớn hơn màn hình */
+        }
+        
+        .video-full-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 150vh;
-            margin: 0;
+            background-color: black; /* Màu nền khi video không chiếm hết màn hình */
         }
-        .container {
-            background-color: #9457eb;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 800px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .columns {
-            display: flex;
-            gap: 20px;
-        }
-        .column {
-            flex: 1;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: 10px;
-            border-radius: 10px;
+        
+        .video-full-screen iframe {
+            /* Giữ tỷ lệ khung hình video, ví dụ 16:9 */
+            /* Dùng min-width và min-height để đảm bảo video luôn tràn màn hình */
+            min-width: 100%;
+            min-height: 100%;
+            width: 177.77vh; /* 100 * (16 / 9) = 177.77 */
+            height: 56.25vw;  /* 100 * (9 / 16) = 56.25 */
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>__________</h2>
-            
-            <h1>Chứng chỉ cho máy bypass</h1>
-            <p>Qua 1 thời gian kiểm chứng, thì bypass có nhiều loại.</p>
-        </div>
-        <div class="columns">
-            <div class="column">
-                <h2>1:</h2>
-                <p>Hiện tại đối với tất cả các gói được bán trên web:</p>
-                <p>🔗 <a href="https://cuios.shop">https://cuios.shop</a></p>
-                <p>✅ Đều hỗ trợ thiết bị bypass full (dùng được sim check *#06# ra imei và lấy được udid)</p>
-                <p>❌ Tuy nhiên không phải 100% là có thể cài đặt được ipa</p>
-                <p>❌ Ae có thể mua để test nhân phẩm. Cũng có rất nhiều ae bú trọn gói vì mua rẻ mà dùng lại mượt mà bao ngon</p>
-            </div>
-            <div class="column">
-                <h2>2:</h2>
-                <p>Nếu ae không muốn test nhân phẩm cũng như không thích trò may rủi và muốn 100% sử dụng được thì vẫn có cho ae nhé.</p>
-                <p>Nhưng hàng này sẽ đắt hơn vì nó sẽ dùng được và <strong>chỉ cần lấy được udid là oke</strong></p>
-                <p>✅ 150k/10-11 tháng /bảo hành 6 tháng/ chờ 72h-96h/hỗ trợ all ios và dòng điện thoại ip</p>
-                <p>Gói này ae phải mua trực tiếp qua mình. Vì gói rất ít và chất lượng. Mình không up lên web bán</p>
-            </div><br><br>
-        </div>
-        <div class="header">
-            <p> Ae mua loại nhân phẩm thì có thể mua all gói trực tiếp trên web luôn nhé. web: <a href="https://cuios.shop">Cuios.shop</a></p><br>
-            <p> Ae nào muốn loại chắc chắn dùng được 100% thì ibox cho mình qua <a href="https://t.me/tomqtx1111">Telegram</a> hoặc <a href="https://zalo.me/0862222849">Zalo</a> nhé. giá 150k như trên nhé</p>
-            
-        </div>
+
+    <div class="video-full-screen">
+        <iframe 
+            src="https://www.youtube.com/embed/RC8TUeTXAP0?autoplay=1&mute=1&loop=1&playlist=RC8TUeTXAP0" 
+            title="Video Full Screen" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
     </div>
+
 </body>
 </html>
